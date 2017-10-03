@@ -1,0 +1,122 @@
+/* You can add global styles to this file, and also import other style files */
+
+$icon-font-path: '/assets/fonts/open-iconic/';
+
+@import './../node_modules/bootstrap/scss/bootstrap';
+
+@import './../node_modules/open-iconic/font/css/open-iconic-bootstrap';
+
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background: #cecbaa;
+    background: -moz-linear-gradient(top, #cecbaa 34%, #d4a51c 64%, #b9660b 100%);
+    background: -webkit-linear-gradient(top, #cecbaa 34%,#d4a51c 64%,#b9660b 100%);
+    background: linear-gradient(to bottom, #cecbaa 34%,#d4a51c 64%,#b9660b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecbaa', endColorstr='#b9660b',GradientType=0 );
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
+.btn-primary {
+
+    &.focus,
+    &:focus {
+        box-shadow: none;
+    }
+
+}
+
+app-root {
+
+    display: block;
+    padding-top: 50px;
+
+    h1 {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    button {
+        margin-bottom: 20px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+}
+
+.project {
+  background: white;
+  border-radius: 3px;
+  overflow: hidden;
+
+  .add-task {
+    @extend .pl-3;
+    @extend .pr-3;
+    @extend .pt-2;
+    @extend .pb-2;
+
+    background: rgba(0, 0, 0, 0.2);
+    color: #333;
+
+    .oi {
+      font-size: 1.5rem;
+    }
+
+  }
+
+  .todo-list {
+
+    .todo {
+      @extend .row;
+      @extend .pl-3;
+      @extend .pr-3;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &#{__check} {
+        @extend .col-1;
+        @extend .text-center;
+        @extend .p-0;
+
+        label {
+          @extend .p-3;
+          @extend .mb-0;
+
+          @media (max-width: 576px) {
+            & {
+              padding: 0.25rem !important;
+            }
+          }
+        }
+      }
+
+      &#{__body} {
+        @extend .col;
+        @extend .p-3;
+        @extend .pl-0;
+
+        border-left: 1px solid rgba(255, 0, 0, 0.2);
+
+        @media (max-width: 576px) {
+          & {
+            padding: 0.25rem !important;
+          }
+        }
+      }
+    }
+
+  }
+}
